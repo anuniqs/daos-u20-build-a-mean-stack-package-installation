@@ -52,3 +52,51 @@ https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-ubuntu/
 `root@u22-128-YT-MACHINE:~# systemctl enable mongod`
 
 `root@u22-128-YT-MACHINE:~# systemctl status mongod`
+
+<br>
+
+
+### Install Node.js,
+
+https://nodejs.org/en/
+
+https://nodejs.org/en/download/
+
+https://nodejs.org/en/download/package-manager/
+
+https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions
+
+https://github.com/nodesource/distributions/blob/master/README.md
+
+<br>
+
+`root@u22-128-YT-MACHINE:~# apt-get install curl`
+
+`root@u22-128-YT-MACHINE:~# curl -sL https://deb.nodesource.com/setup_18.x | bash -`
+
+`root@u22-128-YT-MACHINE:~# apt-get install nodejs -y`
+
+<br>
+
+`root@u22-128-YT-MACHINE:~# node -v`
+
+`root@u22-128-YT-MACHINE:~# npm -v`
+
+<br>
+
+`root@u22-128-YT-MACHINE:~# npm install -g yarn`
+
+`root@u22-128-YT-MACHINE:~# yarn -v`
+
+<br>
+
+`root@u22-128-YT-MACHINE:~# npm install -g gulp`
+
+`root@u22-128-YT-MACHINE:~# gulp -v`
+
+<br>
+
+`root@u22-128-YT-MACHINE:~# npm install pm2 -g`
+
+`root@u22-128-YT-MACHINE:~# pm2 -v`
+
