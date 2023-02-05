@@ -210,6 +210,8 @@ https://github.com/nodesource/distributions/blob/master/README.md
 
 `root@u22-128-YT-MACHINE:~# systemctl status nginx`
 
+<br>
+
 
 ### Access MEAN Application,
 
