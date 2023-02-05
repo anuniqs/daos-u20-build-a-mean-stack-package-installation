@@ -127,3 +127,39 @@ https://github.com/nodesource/distributions/blob/master/README.md
 `root@u22-128-YT-MACHINE:~# cd mean`
 
 `root@u22-128-YT-MACHINE:~/mean# yarn install`
+
+<br>
+
+
+### Create MEAN Application,
+
+`root@u22-128-YT-MACHINE:~/mean# nano server.js`
+    const express = require('express');
+    const MongoClient = require('mongodb').MongoClient;
+    const app = express();
+    
+    app.use('/', (req, res) => {
+    MongoClient.connect("mongodb://localhost:27017/test", function(err, db){
+    db.collection('Example', function(err, collection){
+    collection.insert({ pageHits: 'pageHits' });
+    db.collection('Example').count(function(err, count){
+    if(err) throw err;
+    res.status(200).send('Page Hits: ' + Math.floor(count/2));
+    });
+    });
+    });
+    });
+    
+    app.listen(3000);
+    console.log('Server running at http://localhost:3000/');
+    
+    module.exports = app;
+
+
+`root@u22-128-YT-MACHINE:~/mean# pm2 start server.js`
+
+`root@u22-128-YT-MACHINE:~/mean# pm2 startup`
+
+`root@u22-128-YT-MACHINE:~/mean# ss -antpl | grep 3000`
+
+    http://localhost:3000/
