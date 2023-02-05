@@ -164,3 +164,53 @@ https://github.com/nodesource/distributions/blob/master/README.md
 `root@u22-128-YT-MACHINE:~/mean# ss -antpl | grep 3000`
 
     http://localhost:3000/
+
+<br>
+
+
+### Configure Nginx as a Reverse Proxy For MEAN,
+
+`root@u22-128-YT-MACHINE:~# cd`
+
+`root@u22-128-YT-MACHINE:~# apt-get install nginx -y`
+
+<br>
+
+`root@u22-128-YT-MACHINE:~# nano /etc/nginx/conf.d/mean.conf`
+
+<br>
+
+    server {
+    listen 80;
+    
+    server_name 192.168.56.128;
+    access_log /var/log/nginx/mean-access.log;
+    error_log /var/log/nginx/mean-error.log;
+    
+    location / {
+    proxy_set_header X-Forwarded-Host $host;
+    proxy_set_header X-Forwarded-Server $host;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_pass http://localhost:3000/;
+    }
+    }
+
+
+`root@u22-128-YT-MACHINE:~# nano /etc/nginx/nginx.conf`
+
+# server_names_hash_bucket_size 64;
+
+`root@u22-128-YT-MACHINE:~# nginx -t`
+
+<br>
+
+`root@u22-128-YT-MACHINE:~# systemctl restart nginx`
+
+`root@u22-128-YT-MACHINE:~# systemctl enable nginx`
+
+`root@u22-128-YT-MACHINE:~# systemctl status nginx`
+
+
+### Access MEAN Application,
+
+    http://192.168.56.128/
