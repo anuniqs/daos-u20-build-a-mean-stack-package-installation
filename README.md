@@ -198,7 +198,7 @@ https://github.com/nodesource/distributions/blob/master/README.md
 
 `root@u22-128-YT-MACHINE:~# nano /etc/nginx/nginx.conf`
 
-# server_names_hash_bucket_size 64;
+    # server_names_hash_bucket_size 64;
 
 `root@u22-128-YT-MACHINE:~# nginx -t`
 
