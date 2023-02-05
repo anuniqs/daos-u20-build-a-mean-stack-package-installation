@@ -100,3 +100,30 @@ https://github.com/nodesource/distributions/blob/master/README.md
 
 `root@u22-128-YT-MACHINE:~# pm2 -v`
 
+<br>
+
+
+### Install Python and Git,
+
+`root@u22-128-YT-MACHINE:~# apt-get install python2.7`
+
+`root@u22-128-YT-MACHINE:~# ln -s /usr/bin/python2.7 /usr/bin/python`
+
+`root@u22-128-YT-MACHINE:~# python --version`
+
+`root@u22-128-YT-MACHINE:~# python3 --version`
+
+<br>
+
+`root@u22-128-YT-MACHINE:~# apt-get install git`
+
+<br>
+
+
+### Download , Install and Configure MEAN Stack,
+
+`root@u22-128-YT-MACHINE:~# git clone https://github.com/meanjs/mean`
+
+`root@u22-128-YT-MACHINE:~# cd mean`
+
+`root@u22-128-YT-MACHINE:~/mean# yarn install`
